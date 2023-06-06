@@ -4,8 +4,8 @@ namespace BancoKognit.Domain.Models
 {
     public class Wallet
     {
-        public int Id { get; set; }
-        public int UserId { get; set; }
+        public Guid Id { get; set; }
+        public Guid UserId { get; set; }
         public float CurrentValue { get; set; }
         public string Bank { get; set; }
         public DateTime LastUpdate{ get; set; }

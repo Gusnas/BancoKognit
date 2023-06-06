@@ -1,18 +1,18 @@
-﻿namespace BancoKognit.Migrations
+﻿namespace BancoKognit.Infra.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BancoKognit.Infra.Context.UserContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Context.BankContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(BancoKognit.Infra.Context.UserContext context)
+        protected override void Seed(Context.BankContext context)
         {
             //  This method will be called after migrating to the latest version.
 

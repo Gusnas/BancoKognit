@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BancoKognit.Application.Services;
+using BancoKognit.Application.ViewModels;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace BancoKognit.Service.Controllers
 {
@@ -8,14 +11,24 @@ namespace BancoKognit.Service.Controllers
     public class UserController : ControllerBase
     {
         private readonly ILogger<UserController> _logger;
+
         public UserController(ILogger<UserController> logger)
         {
             _logger = logger;
         }
 
         [HttpPost]
-        public void CreateUser()
+        public HttpResponseMessage CreateUser([FromBody]UserViewModel userViewModel)
         {
+            HttpResponseMessage responseMessage;
+            UserAppService userAppService = new UserAppService(); 
+
+            if (ModelState.IsValid)
+            {
+                return responseMessage = userAppService.Register(userViewModel);
+            }
+            else
+                return new HttpResponseMessage(HttpStatusCode.BadRequest);
 
         }
 

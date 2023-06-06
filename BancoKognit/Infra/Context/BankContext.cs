@@ -3,8 +3,13 @@ using System.Data.Entity;
 
 namespace BancoKognit.Infra.Context
 {
-    public class WalletContext:DbContext
+    public class BankContext : DbContext
     {
+        public BankContext() : base("BankContext")
+        {
+        }
+
         public DbSet<Wallet> Wallets { get; set; }
+        public DbSet<User> Users { get; set; } 
     }
 }
