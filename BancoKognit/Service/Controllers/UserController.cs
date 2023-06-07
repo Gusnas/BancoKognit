@@ -17,7 +17,7 @@ namespace BancoKognit.Service.Controllers
             _logger = logger;
         }
 
-        [HttpPost]
+        [HttpPost(Name = "Create User")]
         public HttpResponseMessage CreateUser([FromBody]UserViewModel userViewModel)
         {
             HttpResponseMessage responseMessage;
@@ -29,8 +29,6 @@ namespace BancoKognit.Service.Controllers
             }
             else
                 return new HttpResponseMessage(HttpStatusCode.BadRequest);
-
         }
-
     };
 }

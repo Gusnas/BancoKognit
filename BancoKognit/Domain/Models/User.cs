@@ -2,11 +2,10 @@
 {
     public class User
     {
-        private Guid guid;
-
+        public User() { }
         public User(Guid guid, string name, DateTime birthDate, string cpf)
         {
-            this.guid = guid;
+            Id = guid;
             Name = name;
             BirthDate = birthDate;
             Cpf = cpf;

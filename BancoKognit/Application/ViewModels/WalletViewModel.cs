@@ -17,11 +17,5 @@ namespace BancoKognit.Application.ViewModels
         [Required]
         [DisplayName("Bank")]
         public string Bank { get; set; }
-
-        [Required]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
-        [DataType(DataType.Date, ErrorMessage = "Data em formato inválido")]
-        [DisplayName("Last Update")]
-        public DateTime LastUpdate { get; set; }
     }
 }
